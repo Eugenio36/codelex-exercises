@@ -16,7 +16,7 @@ public class VariablesAndNames {
         cars = 100;
         seatsInACar = 4;
         drivers = 30;
-        passengers = 95;
+        passengers = 90;
         carsNotDriven = cars - drivers;
         carsDriven = drivers;
         carpoolCapacity = carsDriven * seatsInACar;
