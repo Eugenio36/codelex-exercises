@@ -57,13 +57,11 @@ public class CalculateArea {
 
         BigDecimal radius = ZERO;
 
-        // Get input from user
         Scanner keyboard = new Scanner(System.in);
-        System.out.print("What is the circle's radius? ");
-        //todo
-        //radius = keyboard.nextDouble();
 
-        // Display output
+        System.out.print("What is the circle's radius? ");
+        radius = BigDecimal.valueOf(keyboard.nextDouble());
+
         System.out.println("The circle's area is "
                 + Geometry.areaOfCircle(radius));
     }
@@ -71,21 +69,16 @@ public class CalculateArea {
     public static void calculateRectangleArea() {
         BigDecimal length = ZERO;
         BigDecimal width = ZERO;
-
-        // Get input from user
         Scanner keyboard = new Scanner(System.in);
 
-        // Get length
+
         System.out.print("Enter length? ");
-        //todo
-        //length = keyboard.nextDouble();
+        length = BigDecimal.valueOf(keyboard.nextDouble());
 
-        // Get width
         System.out.print("Enter width? ");
-        //todo
-        //width = keyboard.nextDouble();
+        width = BigDecimal.valueOf(keyboard.nextDouble());
 
-        // Display output
+
         System.out.println("The rectangle's area is "
                 + Geometry.areaOfRectangle(length, width));
     }
@@ -94,20 +87,14 @@ public class CalculateArea {
         BigDecimal base = ZERO;
         BigDecimal height = ZERO;
 
-        // Get input from user
         Scanner keyboard = new Scanner(System.in);
 
-        // Get the base
         System.out.print("Enter length of the triangle's base? ");
-        //todo
-        //base = keyboard.nextDouble();
+        base = BigDecimal.valueOf(keyboard.nextDouble());
 
-        // Get the height
         System.out.print("Enter triangle's height? ");
-        //todo
-        //height = keyboard.nextDouble();
+        height = BigDecimal.valueOf(keyboard.nextDouble());
 
-        // Display the triangle's area.
         System.out.println("The triangle's area is "
                 + Geometry.areaOfTriangle(base, height));
     }
