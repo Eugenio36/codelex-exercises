@@ -9,22 +9,21 @@ public class Exercise2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Please enter a min number");
+        System.out.println("Please enter a min number: ");
         int minNumber = input.nextInt();
 
-        System.out.println("Please enter a max number");
+        System.out.println("Please enter a max number: ");
         int maxNumber = input.nextInt();
 
         int myArray[];
+
         int sum = 0;
 
-        /*
-        fixme
-        for (........) {
-        ........
-        }
-        */
 
-        System.out.println("The sum is " + sum);
+        for (int i = minNumber; i <= maxNumber; i++) {
+            sum = sum + i;
+        }
+
+        System.out.println("The sum of numbers from " + minNumber + " and " + maxNumber + " is " + sum);
     }
 }
