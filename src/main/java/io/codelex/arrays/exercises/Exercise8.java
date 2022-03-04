@@ -19,8 +19,8 @@ public class Exercise8 {
             }
             i++;
         }
-        System.out.println(filler);
-        System.out.println("Life remaining: " + life);
+        System.out.print(filler);
+        System.out.println("            Life remaining: " + life);
         System.out.println();
 
 
@@ -54,8 +54,8 @@ public class Exercise8 {
                 break;
             }
 
-            System.out.println(filler);
-            System.out.println("Life remaining: " + life);
+            System.out.print(filler);
+            System.out.println("            Life remaining: " + life);
             System.out.println();
         }
 
