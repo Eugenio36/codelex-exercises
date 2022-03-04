@@ -4,14 +4,33 @@ import java.util.Scanner;
 
 public class TicTacToe {
 
-    private static char[][] board = new char[3][3];
+    static char[][] board = {
+            {'X', ' ', 'O'},
+            {'O', 'X', 'X'},
+            {' ', 'X', 'O'},
+};
 
     public static void main(String[] args) {
-        Scanner keyboard = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        initBoard();
+        System.out.println("(...a game already in progress)");
         displayBoard();
 
+        System.out.println("'O', choose your location (row, column): 0 1");
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+
+        board[x][y] = 'O';
+        displayBoard();
+
+        System.out.println("'X', choose your location (row, column): 2 0");
+        int x1 = scanner.nextInt();
+        int y1 = scanner.nextInt();
+
+        board[x1][y1] = 'X';
+        displayBoard();
+
+        System.out.println("The game is a tie.");
     }
 
     public static void initBoard() {
@@ -22,11 +41,8 @@ public class TicTacToe {
     }
 
     public static void displayBoard() {
-        System.out.println("  0  " + board[0][0] + "|" + board[0][1] + "|" + board[0][2]);
-        System.out.println("    --+-+--");
-        System.out.println("  1  " + board[1][0] + "|" + board[1][1] + "|" + board[1][2]);
-        System.out.println("    --+-+--");
-        System.out.println("  2  " + board[2][0] + "|" + board[2][1] + "|" + board[2][2]);
-        System.out.println("     0 1 2 ");
+        System.out.println(board[0][0] + " " + board[0][1] + " " + board[0][2]);
+        System.out.println(board[1][0] + " " + board[1][1] + " " + board[1][2]);
+        System.out.println(board[2][0] + " " + board[2][1] + " " + board[2][2]);
     }
 }

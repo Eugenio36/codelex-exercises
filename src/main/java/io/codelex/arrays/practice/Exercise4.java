@@ -14,8 +14,8 @@ public class Exercise4 {
         int searchValue = 1245;
 
         // fixme - check if contains number 1245
-        for (int value : myArray) {
-            if (value == searchValue){
+        for (int x : myArray) {
+            if (x == searchValue){
                 found = true;
                 break;
             }
