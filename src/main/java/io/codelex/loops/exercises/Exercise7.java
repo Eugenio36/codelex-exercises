@@ -14,6 +14,7 @@ public class Exercise7 {
 
         System.out.println("Welcome to Piglet! Roll a dice!");
 
+
         while (true) {
             int rollDice = random.nextInt(6) + 1;
 
@@ -26,14 +27,16 @@ public class Exercise7 {
                 System.out.println("Your rolled a " + rollDice + "!");
                 total = total + rollDice;
                 System.out.println("Roll again? y/n");
-                String rollAgain = scanner.nextLine();
+                String rollAgain = scanner.nextLine().toLowerCase();
 
-                if (rollAgain.equals("n")) {
+                 if (rollAgain.equals("n") || rollAgain.equals("no")) {
                     System.out.println("You got " + total + " points.");
                     break;
-                } else if (rollAgain.equals("y")) {
+                } else if (rollAgain.equals("y") || rollAgain.equals("yes")) {
                     total = total + points;
-                }
+                } else {
+                     System.out.println("Wrong input! Try again!");
+                 }
             }
         }
     }
