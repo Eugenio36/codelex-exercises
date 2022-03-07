@@ -6,10 +6,12 @@ public class Car {
     double liters;
 
     Car(double startOdo) {
+
         startKilometers = startOdo;
     }
 
     public double calculateConsumption(){
+
         return (endKilometers - startKilometers) / liters;
     }
 
@@ -18,6 +20,7 @@ public class Car {
     }
 
     boolean economyCar(){
+
         return (100/calculateConsumption()) < 5;
     }
 

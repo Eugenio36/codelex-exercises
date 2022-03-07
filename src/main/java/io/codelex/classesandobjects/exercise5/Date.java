@@ -6,36 +6,50 @@ public class Date {
     private int year;
 
     public Date(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
+        setDay(day);
+        setMonth(month);
+        setYear(year);
     }
 
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
+    public void setDay(int day) {
+        if (day > 0 && day <= 31) {
+            this.day = day;
+        } else {
+            System.out.println("Wrong day!");
+        }
     }
 
     public int getDay() {
         return day;
     }
 
-    public void setDay(int day) {
-        this.day = day;
+    public void setMonth(int month) {
+        if (month >= 0 && month <= 12) {
+            this.month = month;
+        } else {
+            System.out.println("Wrong month!");
+        }
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setYear(int year) {
+        if (year > 0) {
+            this.year = year;
+        } else {
+            System.out.println("Wrong year!");
+        }
     }
 
     public int getYear() {
         return year;
     }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
+
 
     public void displayDate() {
-        System.out.println(this.day + "/" + this.month + "/" + this.year);
+        System.out.println("Date: " + this.day + "/" + this.month + "/" + this.year);
     }
 }

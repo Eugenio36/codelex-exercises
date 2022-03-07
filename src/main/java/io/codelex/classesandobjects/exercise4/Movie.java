@@ -34,10 +34,6 @@ public class Movie {
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "title='" + title + '\'' +
-                ", studio='" + studio + '\'' +
-                ", rating='" + rating + '\'' +
-                '}';
+        return "title: " + title + ", studio: " + studio + ", rating: " + rating;
     }
 }

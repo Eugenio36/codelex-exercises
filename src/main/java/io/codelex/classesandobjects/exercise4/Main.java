@@ -10,6 +10,7 @@ public class Main {
 
         Movie[] movies = {movie1, movie2,movie3};
 
+        System.out.println("PG rated movie list: ");
         System.out.println(Arrays.toString(Movie.getPG(movies)));
 
     }
