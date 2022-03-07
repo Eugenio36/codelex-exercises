@@ -22,7 +22,7 @@ public class Exercise7 {
                 System.out.println("You rolled a " + rollDice + "!");
                 System.out.println("You got 0 points.");
                 points = 0;
-                break;
+                System.exit(0);
             } else {
                 System.out.println("Your rolled a " + rollDice + "!");
                 total = total + rollDice;
@@ -30,8 +30,8 @@ public class Exercise7 {
                 String rollAgain = scanner.nextLine().toLowerCase();
 
                  if (rollAgain.equals("n") || rollAgain.equals("no")) {
-                    System.out.println("You got " + total + " points.");
-                    break;
+                    System.out.println("Thank you for the game. You got " + total + " points.");
+                     System.exit(0);
                 } else if (rollAgain.equals("y") || rollAgain.equals("yes")) {
                     total = total + points;
                 } else {
