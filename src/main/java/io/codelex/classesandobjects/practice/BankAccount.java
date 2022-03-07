@@ -7,12 +7,26 @@ public class BankAccount {
     public String name;
     public double balance;
 
-    public final void deposit(double amount) {
-        //todo
+    public BankAccount(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+    @Override
+    public String toString() {
+        return  name + ", " + printBalance();
     }
 
-    public final void withdraw(double amount) {
-        //todo
+    public String printBalance() {
+        if (balance < 0) {
+            return "-$" + Math.abs(balance);
+        } else {
+            return "$" + balance;
+        }
+    }
+
+    public static void main(String[] args) {
+        BankAccount benson = new BankAccount("Benson", 17.25);
+        System.out.println(benson);
     }
 
 }
