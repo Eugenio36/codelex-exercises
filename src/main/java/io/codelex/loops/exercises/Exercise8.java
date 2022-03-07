@@ -2,10 +2,10 @@ package io.codelex.loops.exercises;
 
 public class Exercise8 {
     public static void main(String[] args) {
-        AsciiFigure(5);
+        asciiFigure(5);
     }
 
-    public static void AsciiFigure(int size) {
+    public static void asciiFigure(int size) {
         for (int i = 0; i < size; i++) {
 
             int maxWidth = 8 * (size - 1);
