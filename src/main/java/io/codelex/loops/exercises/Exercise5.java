@@ -13,7 +13,9 @@ public class Exercise5 {
 
         System.out.print(first);
 
-        int dotQuantity = 30 - first.length() - second.length();
+        int maxStringLength = 30;
+
+        int dotQuantity = maxStringLength - first.length() - second.length();
 
         for (int i = 0; i < dotQuantity; ++i) {
             System.out.print(".");
