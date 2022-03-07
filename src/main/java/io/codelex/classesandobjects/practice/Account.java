@@ -10,19 +10,28 @@ public class Account {
     }
 
     public void deposit(double amount) {
+
         balance += amount;
     }
 
     public void withdrawal(double amount) {
+
         balance -= amount;
     }
 
     public double balance() {
-        return balance;
+        return
+                balance;
+    }
+
+    public static void transfer(Account from, Account to, double howMuch) {
+        to.deposit(howMuch);
+        from.withdrawal(howMuch);
     }
 
     @Override
     public String toString() {
+
         return owner + " balance: " + balance;
     }
 }
