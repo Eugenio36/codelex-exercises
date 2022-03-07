@@ -17,6 +17,7 @@ public class Exercise4 {
             case 5 -> System.out.println("It is Friday");
             case 6 -> System.out.println("It is Saturday");
             case 7 -> System.out.println("It is Sunday");
+            default -> System.out.println("Not a valid day");
         }
     }
 }
