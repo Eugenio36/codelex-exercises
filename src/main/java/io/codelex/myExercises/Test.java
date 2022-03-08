@@ -1,16 +1,16 @@
 package io.codelex.myExercises;
 
-import java.math.BigDecimal;
+
 import java.util.Scanner;
 
 public class Test {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String A = in.nextLine();
 
-        BigDecimal a = new BigDecimal("4");
-        BigDecimal b = new BigDecimal("3.7");
 
-        BigDecimal diff = a.subtract(b);
 
-        System.out.println(diff);
-        }
+        System.out.println("SOLUTION");
     }
+
+}

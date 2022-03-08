@@ -9,19 +9,19 @@ public class EnergyDrinks {
 
     public static void main(String[] args) {
 
-        double energyDrinkers = calculateEnergyDrinkers(NUMBERED_SURVEYED);
-        double preferCitrus = calculatePreferCitrus(NUMBERED_SURVEYED);
+        double energyDrinkers = calculateEnergyDrinkers();
+        double preferCitrus = calculatePreferCitrus();
 
         System.out.println("Total number of people surveyed " + NUMBERED_SURVEYED);
         System.out.println("Approximately " + energyDrinkers + " bought at least one energy drink");
         System.out.println(preferCitrus + " of those " + "prefer citrus flavored energy drinks.");
     }
 
-    public static double calculateEnergyDrinkers(int numberSurveyed) {
-        return (int) Math.floor(NUMBERED_SURVEYED * PURCHASED_ENERGY_DRINKS);
+    public static double calculateEnergyDrinkers() {
+        return NUMBERED_SURVEYED * PURCHASED_ENERGY_DRINKS;
     }
 
-    public static double calculatePreferCitrus(int numberSurveyed) {
-        return (int) Math.floor(NUMBERED_SURVEYED * PURCHASED_ENERGY_DRINKS * PREFER_CITRUS_DRINKS);
+    public static double calculatePreferCitrus() {
+        return calculateEnergyDrinkers() * PREFER_CITRUS_DRINKS;
     }
 }

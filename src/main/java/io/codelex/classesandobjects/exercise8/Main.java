@@ -1,6 +1,8 @@
 package io.codelex.classesandobjects.exercise8;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -20,10 +22,8 @@ public class Main {
 
         double monthlyDeposit;
         double totalDeposits = 0;
-
         double monthlyWithdrawal;
         double totalWithdrawal = 0;
-
         double interestEarned = 0;
 
 
@@ -46,11 +46,20 @@ public class Main {
 
         }
 
-        DecimalFormat decimal = new DecimalFormat("#,##0.00");
+        String totalDepositsFormatted = currencyWithChosenLocalisation(totalDeposits, new Locale("en", "US"));
+        String totalWithdrawalFormatted = currencyWithChosenLocalisation(totalWithdrawal, new Locale("en", "US"));
+        String interestEarnedFormatted = currencyWithChosenLocalisation(interestEarned, new Locale("en", "US"));
+        String accountBalanceFormatted = currencyWithChosenLocalisation(savingsAccount.getAccountBalance(), new Locale("en", "US"));
 
-        System.out.println("Total deposited: $" + decimal.format(totalDeposits));
-        System.out.println("Total withdrawn: $" + decimal.format(totalWithdrawal));
-        System.out.println("Interest earned: $" + decimal.format(interestEarned));
-        System.out.println("Ending balance: $" + decimal.format(savingsAccount.getAccountBalance()));
+        System.out.println("Total deposited: " + totalDepositsFormatted);
+        System.out.println("Total withdrawn: " + totalWithdrawalFormatted);
+        System.out.println("Interest earned: " + interestEarnedFormatted);
+        System.out.println("Ending balance: " + accountBalanceFormatted);
+
+    }
+
+    public static String currencyWithChosenLocalisation(double value, Locale locale) {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(locale);
+        return nf.format(value);
     }
 }

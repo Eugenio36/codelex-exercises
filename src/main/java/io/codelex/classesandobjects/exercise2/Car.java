@@ -12,10 +12,11 @@ public class Car {
 
     public double calculateConsumption(){
 
-        return (endKilometers - startKilometers) / liters;
+        return (this.endKilometers - this.startKilometers) / this.liters;
     }
 
     boolean gasHog(){
+
         return (100/calculateConsumption()) > 15;
     }
 

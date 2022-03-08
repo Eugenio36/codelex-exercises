@@ -50,6 +50,6 @@ public class Date {
 
 
     public void displayDate() {
-        System.out.println("Date: " + this.day + "/" + this.month + "/" + this.year);
+        System.out.println(this.day + "/" + this.month + "/" + this.year);
     }
 }
