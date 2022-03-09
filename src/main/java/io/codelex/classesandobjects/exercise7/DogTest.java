@@ -28,11 +28,11 @@ public class DogTest {
 
         // Dogs fathers
         for (Dog dog : dogs) {
-            System.out.println(dog + " father: " + dog.fathersName());
+            System.out.println(dog + "Dog`s father is: " + dog.fathersName());
         }
 
-        // Has Coco and Rocky the same mother?
         System.out.println();
+        System.out.println("Has Coco and Rocky the same mother?");
         System.out.println(dogs[7].hasSameMotherAs(dogs[1])); // true?
 
     }

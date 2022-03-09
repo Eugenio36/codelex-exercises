@@ -31,13 +31,14 @@ public class Dog {
     }
 
     public boolean hasSameMotherAs(Dog otherDog) {
+
         return mother == otherDog.mother;
     }
 
 
     @Override
     public String toString() {
-        return  String.format("%s (%s)", name, sex);
+        return name + ", " + sex + ". ";
     }
 
     public String getName() {
