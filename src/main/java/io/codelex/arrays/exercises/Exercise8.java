@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exercise8 {
 
-    public static final String[] WORDS = {
+    private static final String[] WORDS = {
             "destination", "school", "attractive",
             "belt", "clearance", "spontaneous",
             "grimace", "leader", "executive",
@@ -13,9 +13,21 @@ public class Exercise8 {
 
     public static void main(String[] args) {
         game();
+
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println();
+            System.out.println("Play 'again' or 'quit'? - yes/no");
+            String answer = scanner.nextLine().toLowerCase();
+            if (answer.equals("yes") || answer.equals("y") || answer.equals("again") || answer.equals("a"))
+                game();
+            if (answer.equals("no") || answer.equals("n") || answer.equals("quit") || answer.equals("q"))
+                break;
+        }
     }
 
-    public static void game() {
+    private static void game() {
         Scanner scanner = new Scanner(System.in);
 
         String guessedLetters = "";
@@ -44,15 +56,6 @@ public class Exercise8 {
         if (!playerWon(randomWord, guessedLetters)) {
             System.out.println("You have lost!");
         }
-
-        System.out.println();
-        System.out.println("Play 'again' or 'quit'? - yes/no");
-        String answer = scanner.nextLine();
-
-        if (answer.equals("yes") || answer.equals("y") || answer.equals("again") || answer.equals("a"))
-            game();
-        if (answer.equals("no") || answer.equals("n") || answer.equals("quit") || answer.equals("q"))
-            scanner.close();
     }
 
 

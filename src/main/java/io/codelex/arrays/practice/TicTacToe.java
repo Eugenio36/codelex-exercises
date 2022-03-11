@@ -1,6 +1,5 @@
 package io.codelex.arrays.practice;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TicTacToe {
@@ -12,27 +11,22 @@ public class TicTacToe {
         System.out.println("Player 2, what is your name?");
         String p2 = scanner.nextLine();
 
-        //Create board
-        char[][] board = new char[3][3];
+        char[][] board = new char[3][3];            //Create board
 
-        //Fill the board with dashes
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3; i++) {               //Fill the board with dashes
             for (int j = 0; j < 3; j++) {
                 board[i][j] = '-';
             }
         }
 
-        //Keep track of whose turn it is
-        boolean isPlayer1 = true;
+        boolean isPlayer1 = true;                   //Keep track of whose turn it is
 
-        //Keep track if game has ended;
-        boolean gameEnded = false;
+        boolean gameEnded = false;                  //Keep track if game has ended;
 
-        while(!gameEnded) {
-            //Draw the board
+        while (!gameEnded) {
+
             drawBoard(board);
 
-            //Keep track of what symbol we are using to play
             char symbol = ' ';
             if (isPlayer1) {
                 symbol = 'X';
@@ -40,7 +34,6 @@ public class TicTacToe {
                 symbol = 'O';
             }
 
-            //Print hte player`s turn.
             if (isPlayer1) {
                 System.out.println(p1 + "'s Turn (X):");
             } else {
@@ -51,13 +44,11 @@ public class TicTacToe {
             int column = 0;
 
             while (true) {
-                //Get row and column from user
                 System.out.println("Enter a row (0, 1, 2): ");
                 row = scanner.nextInt();
                 System.out.println("Enter a column (0, 1, 2): ");
                 column = scanner.nextInt();
 
-                //Check if row and column is valid
                 if (row < 0 || column < 0 || row > 2 || column > 2) {
                     System.out.println("Invalid input!");
                 } else if (board[row][column] != '-') {
@@ -67,10 +58,10 @@ public class TicTacToe {
                 }
             }
 
-            //Setting the position on the board to player`s symbol
-            board[row][column] = symbol;
 
-            // Check if a player has won
+            board[row][column] = symbol;                    //Setting the position on the board to player`s symbol
+
+
             if (hasWon(board) == 'X') {
                 System.out.println(p1 + " has won");
                 gameEnded = true;
@@ -78,21 +69,19 @@ public class TicTacToe {
                 System.out.println(p2 + " has won");
                 gameEnded = true;
             } else {
-                //Nobody has won
                 if (hasTied(board)) {
                     System.out.println("It`s a tie!");
                     gameEnded = true;
                 } else {
-                    //Continue game and switch the turn
                     isPlayer1 = !isPlayer1;
                 }
             }
         }
-        //Print out the final state of the board
+
         drawBoard(board);
     }
 
-    // Print the board
+
     public static void drawBoard(char[][] board) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -118,10 +107,10 @@ public class TicTacToe {
         }
 
         //Diagonals
-        if(board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '-') {
+        if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != '-') {
             return board[0][0];
         }
-        if(board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] != '-') {
+        if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] != '-') {
             return board[2][0];
         }
 
@@ -134,14 +123,11 @@ public class TicTacToe {
     public static boolean hasTied(char[][] board) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if(board[i][j] == '-') {
+                if (board[i][j] == '-') {
                     return false;
                 }
             }
         }
         return true;
     }
-
-
-
 }
