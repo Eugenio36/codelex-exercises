@@ -8,6 +8,8 @@ public class TestShape {
         DecimalFormat decimal = new DecimalFormat("0.00");
 
         Rectangle rectangle = new Rectangle(3, 4);
+        System.out.println("Rectangle:");
+        System.out.println("Sides: " + (int) rectangle.getNumSides());
         System.out.println("Width: " + rectangle.getWidth());
         System.out.println("Height: " + rectangle.getHeight());
         System.out.println("Rectangle area: " + decimal.format(rectangle.getArea()));
@@ -16,6 +18,8 @@ public class TestShape {
         System.out.println();
 
         Triangle triangle = new Triangle(5.4, 2.1);
+        System.out.println("Triangle:");
+        System.out.println("Sides: " + (int) triangle.getNumSides());
         System.out.println("Width: " + triangle.getWidth());
         System.out.println("Height: " + triangle.getHeight());
         System.out.println("Triangle area: " + decimal.format(triangle.getArea()));
