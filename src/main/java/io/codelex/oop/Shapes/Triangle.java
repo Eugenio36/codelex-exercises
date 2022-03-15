@@ -1,4 +1,4 @@
-package io.codelex.oop.Exercise1;
+package io.codelex.oop.Shapes;
 
 public class Triangle extends Shape {
     private double width;
@@ -11,10 +11,12 @@ public class Triangle extends Shape {
         this.height = height;
     }
 
+    @Override
     public double getArea() {
         return (width * height) / 2;
     }
 
+    @Override
     public double getPerimeter() {
         return width + height + Math.sqrt((Math.pow(width, 2) + Math.pow(height, 2)));
     }
