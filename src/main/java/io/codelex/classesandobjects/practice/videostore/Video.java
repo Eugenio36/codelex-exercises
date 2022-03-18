@@ -1,14 +1,14 @@
 package io.codelex.classesandobjects.practice.videostore;
 
 public class Video {
-    protected String title;
-    protected boolean flag;
-    protected double userRating;
+    private String title;
+    private boolean isInStock;
+    private double userRating;
 
 
     public Video(String title, boolean flag, int userRating) {
         this.title = title;
-        this.flag = flag;
+        this.isInStock = flag;
         this.userRating = userRating;
     }
 
@@ -21,18 +21,18 @@ public class Video {
     }
 
     public void isCheckedOut() {
-        this.flag = true;
+        this.isInStock = true;
     }
 
     public void isReturned() {
-        this.flag = false;
+        this.isInStock = false;
     }
 
     @Override
     public String toString() {
         return "Video{" +
                 "title = '" + title + '\'' +
-                ", rented = " + flag +
+                ", rented = " + isInStock +
                 ", userRating = " + userRating +
                 '}';
     }
@@ -41,8 +41,24 @@ public class Video {
         return title;
     }
 
-    public void setFlag(boolean flag) {
-        this.flag = flag;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public boolean isInStock() {
+        return isInStock;
+    }
+
+    public double getUserRating() {
+        return userRating;
+    }
+
+    public void setUserRating(double userRating) {
+        this.userRating = userRating;
+    }
+
+    public void setInStock(boolean inStock) {
+        this.isInStock = inStock;
     }
 
 

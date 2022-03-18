@@ -11,9 +11,10 @@ public class BankAccount {
         this.name = name;
         this.balance = balance;
     }
+
     @Override
     public String toString() {
-        return  name + ", " + printBalance();
+        return name + ", " + printBalance();
     }
 
     public String printBalance() {
@@ -25,7 +26,7 @@ public class BankAccount {
     }
 
     public static void main(String[] args) {
-        BankAccount benson = new BankAccount("Benson", -17.25);
+        BankAccount benson = new BankAccount("Benson", 17.5);
         System.out.println(benson);
     }
 

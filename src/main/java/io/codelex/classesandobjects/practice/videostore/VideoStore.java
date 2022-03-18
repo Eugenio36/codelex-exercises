@@ -18,7 +18,7 @@ public class VideoStore {
     //check out a video (by title);
     public void checkOut(String name) {
         for (int i = 0; i < list.toArray().length; i++) {
-            if (list.get(i).title.equals(name) ) {
+            if (list.get(i).getTitle().equals(name)) {
                 list.get(i).isCheckedOut();
             }
         }
@@ -27,7 +27,7 @@ public class VideoStore {
     //return a video to the store;
     public void returnVideo(String name) {
         for (int j = 0; j < list.toArray().length; j++) {
-            if (list.get(j).title.equals(name)) {
+            if (list.get(j).getTitle().equals(name)) {
                 list.get(j).isReturned();
             }
         }

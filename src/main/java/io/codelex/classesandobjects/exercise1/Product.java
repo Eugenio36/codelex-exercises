@@ -1,9 +1,9 @@
 package io.codelex.classesandobjects.exercise1;
 
 public class Product {
-    String name;
-    double price;
-    int amount;
+    private String name;
+    private double price;
+    private int amount;
 
 
     public Product(String name, double priceAtStart, int amountAtStart) {

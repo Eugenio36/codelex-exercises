@@ -2,16 +2,16 @@ package io.codelex.classesandobjects.exercise7;
 
 public class Dog {
     private String name;
-    private String sex;
+    private Sex sex;
     private Dog mother;
     private Dog father;
 
-    public Dog(String name, String sex) {
+    public Dog(String name, Sex sex) {
         this.name = name;
         this.sex = sex;
     }
 
-    public Dog(String name, String sex, Dog mother, Dog father) {
+    public Dog(String name, Sex sex, Dog mother, Dog father) {
         this.name = name;
         this.sex = sex;
         assignParents(mother, father);
@@ -23,7 +23,7 @@ public class Dog {
     }
 
     public String fathersName() {
-        if(father != null) {
+        if (father != null) {
             return father.name;
         } else {
             return "Unknown";
@@ -31,8 +31,11 @@ public class Dog {
     }
 
     public boolean hasSameMotherAs(Dog otherDog) {
-
-        return mother == otherDog.mother;
+        if (this.mother != null) {
+            return this.mother.equals(otherDog.mother);
+        } else {
+            return false;
+        }
     }
 
 
@@ -49,11 +52,4 @@ public class Dog {
         this.name = name;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
 }

@@ -1,7 +1,5 @@
 package io.codelex.classesandobjects.exercise8;
 
-import java.math.BigDecimal;
-
 public class SavingsAccount {
 
     private double accountBalance;
@@ -11,7 +9,6 @@ public class SavingsAccount {
     public SavingsAccount(double balance, double interestRate) {
         accountBalance = balance;
         annualInterestRate = interestRate;
-        lastAmountOfInterestEarned = 0;
     }
 
     public void withdraw(double withdrawAmount) {
@@ -26,7 +23,7 @@ public class SavingsAccount {
 
     public void addInterest() {
 
-        double monthInterestRate = annualInterestRate / 12; // monthly interest rate
+        double monthInterestRate = annualInterestRate / 12;
 
         lastAmountOfInterestEarned = monthInterestRate * accountBalance;
 

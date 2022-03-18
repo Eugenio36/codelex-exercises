@@ -2,7 +2,7 @@ package io.codelex.classesandobjects.exercise3;
 
 public class Odometer {
     public final int MAX_MILEAGE = 999999;
-    public final int KPL = 10; // The car’s fuel economy is 10 kilometers per liter
+    public static final int KPL = 10; // The car’s fuel economy is 10 kilometers per liter
     private double initialMileage;
     private double mileage;
     private FuelGauge fuelGauge;
