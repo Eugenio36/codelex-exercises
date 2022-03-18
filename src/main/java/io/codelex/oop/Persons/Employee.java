@@ -3,8 +3,8 @@ package io.codelex.oop.Persons;
 import java.time.LocalDate;
 
 public class Employee extends Person {
-    protected String position;
-    protected LocalDate startedWorking;
+    private String position;
+    private LocalDate startedWorking;
 
     public Employee(String firstName, String lastName, String id, int age, String position, String startedWorking) {
         super(firstName, lastName, id, age);
@@ -26,6 +26,6 @@ public class Employee extends Person {
 
     @Override
     public String getInfo() {
-        return firstName + " " + lastName + ", " + position + " " + "(" + getWorkExperience() + " years)";
+        return getFirstName() + " " + getLastName() + ", " + getPosition() + " " + "(" + getWorkExperience() + " years)";
     }
 }
