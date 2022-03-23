@@ -14,13 +14,8 @@ public class Exercise2 {
         System.out.println();
         System.out.println("Server launch date: " + date1);
         System.out.println();
-        
 
-        for (LocalDate date = date1; date.isBefore(date2); date = date.plusDays(14)) {
-            if (date.getMonth() == date2.getMonth() && date.getYear() == date2.getYear()) {
-                System.out.println("Server must be updated on " + date.getDayOfMonth() + " of " + date.getMonth() + " (" + date.getYear() + ")");
-            }
-        }
+        serverUpdatedDays(date1, date2);
 
     }
 
@@ -38,4 +33,14 @@ public class Exercise2 {
             return LocalDate.of(year, month + 1, 1).minusDays(1);
         }
     }
+
+    private static LocalDate serverUpdatedDays(LocalDate date1, LocalDate date2) {
+        for (LocalDate date = date1; date.isBefore(date2); date = date.plusDays(14)) {
+            if (date.getMonth() == date2.getMonth() && date.getYear() == date2.getYear()) {
+                System.out.println("Server must be updated on " + date.getDayOfMonth() + " of " + date.getMonth() + " (" + date.getYear() + ")");
+            }
+        }
+        return date1;
+    }
+
 }
