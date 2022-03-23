@@ -1,6 +1,5 @@
 package io.codelex.dateandtime.practice.Exercise1;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 public class Exercise1 {
@@ -19,10 +18,6 @@ public class Exercise1 {
         System.out.println("Working hours: " + workingDays(date1, date2) * workingHoursPerDay);
     }
 
-    private static int getDayNumber(LocalDate date) {
-        DayOfWeek day = date.getDayOfWeek();
-        return day.getValue();
-    }
 
     private static int overAllDays(LocalDate date1, LocalDate date2) {
         int overAllDays = 0;
@@ -35,13 +30,17 @@ public class Exercise1 {
     private static int workingDays(LocalDate date1, LocalDate date2) {
         int workingDays = 0;
         for (LocalDate date = date1; date.isBefore(date2.plusDays(1)); date = date.plusDays(1)) {
-            if (getDayNumber(date) != 6 && getDayNumber(date) != 7) {
+            if (isWorkingDay(date)) {
                 workingDays++;
             }
         }
         return workingDays;
     }
-    
+
+    private static boolean isWorkingDay(LocalDate date) {
+        return date.getDayOfWeek().getValue() < 6;
+    }
+
 }
 
 
