@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Exercise1 {
 
-    private static final int workingHoursPerDay = 8;
+    private static final int WORKING_HOURS_PER_DAY = 8;
 
     public static void main(String[] args) {
 
@@ -15,7 +15,7 @@ public class Exercise1 {
         System.out.println("Second date: " + date2);
         System.out.println("Days in general: " + overAllDays(date1, date2));
         System.out.println("Working days: " + workingDays(date1, date2));
-        System.out.println("Working hours: " + workingDays(date1, date2) * workingHoursPerDay);
+        System.out.println("Working hours: " + workingDays(date1, date2) * WORKING_HOURS_PER_DAY);
     }
 
 
