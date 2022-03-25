@@ -2,6 +2,6 @@ package io.codelex.polymorphism.practice.exercise2;
 
 class Firework implements Sound {
     public void playSound() {
-        System.out.println("whoosh-bang");
+        System.out.println("Firework whoosh-bang");
     }
 }
