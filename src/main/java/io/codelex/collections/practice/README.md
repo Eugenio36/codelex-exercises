@@ -2,7 +2,7 @@
 
 ## Exercise #1
 
-See [Exercise1.java](./Exercise1.java)
+See [Exercise1.java](Exercise1.java)
 
 ## Exercise #2
 
@@ -10,7 +10,7 @@ Train your skills on List, complete all exercises in [lists](lists) package
 
 ## Exercise #3
 
-See [Exercise3.java](./Exercise3.java)
+See [Exercise3.java](Exercise3.java)
 
 ## Exercise #4
 
@@ -60,7 +60,7 @@ By contrast, 4 is not happy because:
 
 ## Exercise #6
 
-See [WordCount.java](./WordCount.java)
+See [WordCount.java](WordCount.java)
 
 Write a console program named WordCount that reads a file and reports how many lines, words, and characters appear in
 it. Suppose, for example, that the file lear.txt contains the passage from Shakespeare's King Lear.
@@ -78,7 +78,7 @@ using the static method Character.isLetterOrDigit.
 
 ## Exercise #7
 
-See [FlightPlanner](./FlightPlanner.java)
+See [FlightPlanner](FlightPlanner.java)
 
 Write a console program that reads in a file containing flight destinations from various cities, and then allow the user
 to plan a round-trip flight route.
@@ -118,7 +118,7 @@ to keep track of the information you care about.
 
 ## Exercise #8
 
-See [Histogram.java](./Histogram.java)
+See [Histogram.java](Histogram.java)
 
 Write a console program named Histogram that reads a list of exam scores from an input file that contains one score per
 line and then displays a histogram of those numbers, divided into the ranges 0-9, 10-19, 20-29, and so forth, up to the
@@ -140,5 +140,5 @@ range containing only the value 100.
 
 ## Exercise #9
 
-Rewrite the [PhoneDirectory](./phonebook/PhoneDirectory.java) class so that it uses a TreeMap to store directory
+Rewrite the [PhoneDirectory](phonebook/PhoneDirectory.java) class so that it uses a TreeMap to store directory
 entries, instead of an array.
