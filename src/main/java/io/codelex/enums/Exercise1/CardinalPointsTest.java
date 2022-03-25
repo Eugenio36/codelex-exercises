@@ -12,7 +12,7 @@ public class CardinalPointsTest {
         System.out.println("-------------------");
 
         for (CardinalPoints cardinalPoints : CardinalPoints.values()) {
-            System.out.println(cardinalPoints.getName() + ":" + cardinalPoints.getDirection() + ":" + cardinalPoints.getValue());
+            System.out.println(cardinalPoints.getName() + ":" + cardinalPoints.getDirection() + ":" + cardinalPoints.ordinal());
 
         }
     }

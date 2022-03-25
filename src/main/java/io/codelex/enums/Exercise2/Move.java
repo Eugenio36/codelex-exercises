@@ -22,7 +22,9 @@ public enum Move {
 
     public static Move getMove(String move) {
         for (Move m : Move.values()) {
-            if (m.move.equals(move)) return m;
+            if (m.move.equals(move)) {
+                return m;
+            }
         }
         return null;
     }
