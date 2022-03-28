@@ -3,8 +3,8 @@ package io.codelex.polymorphism.practice.exercise6;
 public class Tiger extends Feline {
 
 
-    public Tiger(String animalName, String animalType, double animalWeight, int foodEaten, String livingRegion) {
-        super(animalName, animalType, animalWeight, foodEaten, livingRegion);
+    public Tiger(String animalName, String animalType, double animalWeight, String livingRegion) {
+        super(animalName, animalType, animalWeight, livingRegion);
     }
 
     @Override
@@ -15,7 +15,13 @@ public class Tiger extends Feline {
 
     @Override
     public void eat(Food food) {
+        if (food instanceof Vegetable) {
+            System.out.println("Tigers are not eating that type of food!");
+        } else {
+            setFoodEaten(food.getQuantity());
+        }
     }
+
 
     @Override
     public String toString() {

@@ -4,8 +4,8 @@ public class Cat extends Feline {
 
     private String breed;
 
-    public Cat(String animalName, String animalType, double animalWeight, double foodEaten, String livingRegion, String breed) {
-        super(animalName, animalType, animalWeight, foodEaten, livingRegion);
+    public Cat(String animalName, String animalType, double animalWeight, String livingRegion, String breed) {
+        super(animalName, animalType, animalWeight, livingRegion);
         this.breed = breed;
     }
 
@@ -24,6 +24,7 @@ public class Cat extends Feline {
 
     @Override
     public void eat(Food food) {
+        setFoodEaten(food.getQuantity());
     }
 
     @Override
