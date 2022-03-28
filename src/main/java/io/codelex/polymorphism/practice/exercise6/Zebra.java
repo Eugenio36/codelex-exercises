@@ -21,7 +21,7 @@ public class Zebra extends Mammal {
     }
 
     public String toString() {
-        return "["
+        return "Zebra["
                 + getAnimalName() + ", "
                 + getAnimalType() + ", "
                 + getAnimalWeight() + ", "

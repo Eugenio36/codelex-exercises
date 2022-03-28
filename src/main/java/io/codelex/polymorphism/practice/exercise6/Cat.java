@@ -29,7 +29,7 @@ public class Cat extends Feline {
 
     @Override
     public String toString() {
-        return "["
+        return "Cat["
                 + getAnimalName() + ", "
                 + getBreed() + ", "
                 + getAnimalWeight() + ", "

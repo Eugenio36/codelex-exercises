@@ -25,7 +25,7 @@ public class Tiger extends Feline {
 
     @Override
     public String toString() {
-        return "["
+        return "Tiger["
                 + getAnimalName() + ", "
                 + getAnimalType() + ", "
                 + getAnimalWeight() + ", "

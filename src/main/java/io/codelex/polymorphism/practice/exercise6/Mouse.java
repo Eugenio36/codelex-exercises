@@ -22,7 +22,7 @@ public class Mouse extends Mammal {
 
     @Override
     public String toString() {
-        return "["
+        return "Mouse["
                 + getAnimalName() + ", "
                 + getAnimalType() + ", "
                 + getAnimalWeight() + ", "
