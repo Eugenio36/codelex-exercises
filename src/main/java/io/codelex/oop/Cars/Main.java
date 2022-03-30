@@ -74,7 +74,7 @@ public class Main {
 
         System.out.println("Check if car is in the list: " + carService.checkIfCarInList(mercedesS500) + "\n");
 
-        System.out.println("List of cars manufactured by a specific manufacturer: " + carService.getCarByManufacturer(Daimler5) + "\n");
+        System.out.println("List of cars manufactured by a specific manufacturer: " + carService.specificManufacturer(Daimler5) + "\n");
 
         //returning the list of cars manufactured by the manufacturer with the year of establishment <,>, <=,> =, =,! = from the given.
         System.out.println(carService.sameManufacturer("Daimler4", 1991));

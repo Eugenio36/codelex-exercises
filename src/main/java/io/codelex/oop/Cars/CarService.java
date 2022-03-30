@@ -80,14 +80,14 @@ public class CarService {
         return carList.contains(car);
     }
 
-    public List<Car> getCarByManufacturer(Manufacturer manufacturer) {
-        List<Car> carFromManufacturer = new ArrayList<>();
+    public List<Car> specificManufacturer(Manufacturer manufacturer) {
+        List<Car> carsWithSameManufacturer = new ArrayList<>();
         for (Car car : carList) {
             if (car.getManufacturerList().contains(manufacturer)) {
-                carFromManufacturer.add(car);
+                carsWithSameManufacturer.add(car);
             }
         }
-        return carFromManufacturer;
+        return carsWithSameManufacturer;
     }
 
     public List<Car> sameManufacturer(String name, int year) {
