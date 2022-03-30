@@ -8,6 +8,6 @@ public abstract class UnitConverter implements Converter {
         return value.multiply(getCoefficient());
     }
 
-    protected abstract BigDecimal getCoefficient();
+    abstract BigDecimal getCoefficient();
 
 }

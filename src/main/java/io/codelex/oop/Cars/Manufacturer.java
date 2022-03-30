@@ -51,7 +51,10 @@ public class Manufacturer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Manufacturer that = (Manufacturer) o;
-        return yearOfEstablishment == that.yearOfEstablishment && Objects.equals(name, that.name) && Objects.equals(country, that.country);
+        return
+                yearOfEstablishment == that.yearOfEstablishment
+                        && Objects.equals(name, that.name)
+                        && Objects.equals(country, that.country);
     }
 
     @Override

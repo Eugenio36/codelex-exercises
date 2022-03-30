@@ -7,6 +7,9 @@ public class Parcel implements Validatable {
     private int zLength;
     private float weight;
     private boolean isExpress;
+    private static final int MAX_WEIGHT = 30;
+    private static final int MAX_ALL_DIMENSIONS = 300;
+    private static final int MAX_SIZE = 30;
 
     public Parcel(int xLength, int yLength, int zLength, float weight) {
         this.xLength = xLength;
@@ -27,16 +30,24 @@ public class Parcel implements Validatable {
         return zLength;
     }
 
+    public int getSumOfAllDimensions() {
+        return getxLength() + getyLength() + getzLength();
+    }
+
     public float getWeight() {
         return weight;
     }
-    
+
 
     @Override
     public boolean validate() {
-        if (getWeight() < 30) {
+        if (getWeight() < MAX_WEIGHT) {
             isExpress = true;
         }
-        return getxLength() + getyLength() + getzLength() < 300 && getxLength() > 30 && getyLength() > 30 && getzLength() > 30 && isExpress;
+        return getSumOfAllDimensions() < MAX_ALL_DIMENSIONS
+                && getxLength() > MAX_SIZE
+                && getyLength() > MAX_SIZE
+                && getzLength() > MAX_SIZE
+                && isExpress;
     }
 }

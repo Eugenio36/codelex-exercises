@@ -8,6 +8,8 @@ import java.util.stream.Collectors;
 
 public class CarService {
 
+    private static final int AT_LEAST_THREE_MANUFACTURERS = 3;
+
     private List<Car> carList = new ArrayList<>();
 
     public List<Car> getCarList() {
@@ -24,9 +26,9 @@ public class CarService {
 
     public List<Car> getCarByEngine(EngineType engineType) {
         List<Car> carsWithSpecificEngineType = new ArrayList<>();
-        for (Car c : carList) {
-            if (c.getEngineType() == engineType) {
-                carsWithSpecificEngineType.add(c);
+        for (Car car : carList) {
+            if (car.getEngineType() == engineType) {
+                carsWithSpecificEngineType.add(car);
             }
         }
         return carsWithSpecificEngineType;
@@ -34,9 +36,9 @@ public class CarService {
 
     public List<Car> getYearBefore(int year) {
         List<Car> carsBeforeSpecificYear = new ArrayList<>();
-        for (Car c : carList) {
-            if (c.getYearOfManufacture() < year) {
-                carsBeforeSpecificYear.add(c);
+        for (Car car : carList) {
+            if (car.getYearOfManufacture() < year) {
+                carsBeforeSpecificYear.add(car);
             }
         }
         return carsBeforeSpecificYear;
@@ -53,29 +55,25 @@ public class CarService {
     }
 
     public void getNumberOfManufacturers() {
-        for (Car c : carList) {
-            if (c.getManufacturerList().size() >= 3) {
-                System.out.println(c);
+        for (Car car : carList) {
+            if (car.getManufacturerList().size() >= AT_LEAST_THREE_MANUFACTURERS) {
+                System.out.println(car);
             }
         }
     }
 
     public List<Car> sortByNameAscending() {
-        List<Car> sortedListAscending = new ArrayList<>();
-        sortedListAscending = getCarList()
+        return getCarList()
                 .stream()
                 .sorted(Comparator.comparing(Car::getName))
                 .collect(Collectors.toList());
-        return sortedListAscending;
     }
 
     public List<Car> sortByNameDescending() {
-        List<Car> sortedListDescending = new ArrayList<>();
-        sortedListDescending = getCarList()
+        return getCarList()
                 .stream()
                 .sorted(Comparator.comparing(Car::getName).reversed())
                 .collect(Collectors.toList());
-        return sortedListDescending;
     }
 
     public boolean checkIfCarInList(Car car) {
@@ -84,9 +82,9 @@ public class CarService {
 
     public List<Car> getCarByManufacturer(Manufacturer manufacturer) {
         List<Car> carFromManufacturer = new ArrayList<>();
-        for (Car c : carList) {
-            if (c.getManufacturerList().contains(manufacturer)) {
-                carFromManufacturer.add(c);
+        for (Car car : carList) {
+            if (car.getManufacturerList().contains(manufacturer)) {
+                carFromManufacturer.add(car);
             }
         }
         return carFromManufacturer;
@@ -94,10 +92,10 @@ public class CarService {
 
     public List<Car> sameManufacturer(String name, int year) {
         List<Car> carListWithSameManufacturer = new ArrayList<>();
-        for (Car c : carList) {
-            for (Manufacturer manufacturer : c.getManufacturerList()) {
+        for (Car car : carList) {
+            for (Manufacturer manufacturer : car.getManufacturerList()) {
                 if (manufacturer.getName().equals(name) && manufacturer.getYearOfEstablishment() == year) {
-                    carListWithSameManufacturer.add(c);
+                    carListWithSameManufacturer.add(car);
                 }
             }
         }
