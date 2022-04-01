@@ -6,6 +6,7 @@ public abstract class Card {
     private double ccv;
     private double balance;
 
+
     public Card(int number, String fullName, double ccv, double balance) {
         this.number = number;
         this.fullName = fullName;
@@ -45,8 +46,8 @@ public abstract class Card {
         this.balance = balance;
     }
 
-    public abstract double addMoney();
+    public abstract void addMoney(double amount);
 
-    public abstract double takeMoney();
+    public abstract void takeMoney(double amount) throws NotEnoughFundsException;
 
 }
