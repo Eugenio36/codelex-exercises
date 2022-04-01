@@ -8,7 +8,7 @@ public class Bottle<T extends Liquid> {
     }
 
     void printOutContents() {
-        System.out.println(contents.getName() + "has been poured out!");
+        System.out.println(contents.getName() + " has been poured out!");
     }
 
 

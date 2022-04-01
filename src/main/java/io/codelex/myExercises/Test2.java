@@ -1,27 +1,21 @@
 package io.codelex.myExercises;
 
-import java.text.ParseException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiConsumer;
 
 public class Test2 {
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
 
-        int[] array = {10, 3, 450};
-        int size = array.length;
-        int temp;
-
-        for (int i = 0; i < size; i++) {
-            for (int j = i + 1; j < size; j++) {
-
-                if (array[i] > array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
+        BiConsumer<String, List<String>> biConsumer = (s, strings) -> {
+            if (strings.contains(s)) {
+                System.out.println(s + " is present in the list");
+            } else {
+                System.out.println(s + " is not present in the list");
             }
+        };
 
-        }
-
-        System.out.println(array[size - 2]);
+        biConsumer.accept("delhi", Arrays.asList("china", "delhi", "austria", "india"));
     }
 }
 
