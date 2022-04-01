@@ -5,12 +5,12 @@ public class Exercise2 {
         methodA();
     }
 
-
     public static void methodA() throws ArithmeticException {
         try {
             methodB();
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
@@ -19,6 +19,7 @@ public class Exercise2 {
             methodC();
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 
@@ -27,6 +28,7 @@ public class Exercise2 {
             System.out.println(5 / 0);
         } catch (ArithmeticException e) {
             e.printStackTrace();
+            throw e;
         }
     }
 }

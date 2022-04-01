@@ -1,10 +1,5 @@
 package io.codelex.exceptions.practice;
 
-class NonPositiveNumberException extends Exception {
-    public NonPositiveNumberException(String errorMessage) {
-        super(errorMessage);
-    }
-}
 
 public class Exercise4 {
     public static void main(String[] args) {
