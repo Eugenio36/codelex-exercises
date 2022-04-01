@@ -18,8 +18,8 @@ public class Exercise5 {
     }
 
     public static <T> double partOf(List<T> list, Predicate<T> criteria) {
-        long countThatMatches = list.stream().filter(criteria).count();
-        return (double) countThatMatches / list.size();
+        return (double) list.stream().filter(criteria).count() / list.size();
+
     }
 
 }
