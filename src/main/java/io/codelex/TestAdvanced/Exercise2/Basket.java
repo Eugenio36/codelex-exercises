@@ -1,34 +1,36 @@
 package io.codelex.TestAdvanced.Exercise2;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Basket<T1, T2> {
+public class Basket<T> {
+
     private int basketValue = 0;
-    private final Map<T1, T2> basket = new HashMap<>();
+    private final List<T> basket = new ArrayList<>();
 
     public Basket() {
     }
 
-    public int getBasketValue() {
-        return basketValue;
+    public List<T> getBasket() {
+        return basket;
     }
 
-    public void addToBasket(T1 key, T2 item) throws BasketFullException {
-        if (basketValue > 10) {
+
+    public void addToBasket(T item) throws BasketFullException {
+        if (basket.size() >= 10) {
             throw new BasketFullException("Basket is full");
         } else {
-            basket.put(key, item);
+            basket.add(item);
             basketValue++;
         }
     }
 
 
-    public void removeFromBasket(T1 key) throws BasketEmptyException {
-        if (basketValue == 0) {
+    public void removeFromBasket(T item) throws BasketEmptyException {
+        if (basket.size() == 0) {
             throw new BasketEmptyException("Basket is empty");
         } else {
-            basket.remove(key);
+            basket.remove(item);
             basketValue--;
         }
     }
