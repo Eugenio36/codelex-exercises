@@ -26,5 +26,6 @@ public class Main {
         basketApple.addToBasket(new Apple());
         basketApple.addToBasket(new Apple());
         basketApple.addToBasket(new Apple());
+        basketApple.addToBasket(new Apple());
     }
 }
