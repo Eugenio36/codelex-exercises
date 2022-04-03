@@ -4,7 +4,7 @@ public class CreditCard extends Card {
 
     private static final int MIN_BALANCE = 100;
 
-    public CreditCard(int number, String fullName, double ccv, double balance) {
+    public CreditCard(int number, String fullName, String ccv, double balance) {
         super(number, fullName, ccv, balance);
     }
 
@@ -16,14 +16,16 @@ public class CreditCard extends Card {
 
     @Override
     public void takeMoney(double amount) throws NotEnoughFundsException {
-        try {
-            setBalance(getBalance() - amount);
 
-            if (getBalance() < MIN_BALANCE) {
-                System.out.println("Warning: Low funds");
-            }
-        } catch (ArithmeticException e) {
-            throw new ArithmeticException("Not enough funds");
+        if (getBalance() < amount) {
+            throw new NotEnoughFundsException("Not enough funds on your card!");
+        }
+
+        setBalance(getBalance() - amount);
+
+        if (getBalance() < MIN_BALANCE) {
+            System.out.println("Warning: Low funds");
+
         }
     }
 }

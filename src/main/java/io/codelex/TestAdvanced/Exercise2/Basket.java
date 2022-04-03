@@ -8,13 +8,10 @@ public class Basket<T> {
     private int basketValue = 0;
     private final List<T> basket = new ArrayList<>();
 
-    public Basket() {
-    }
 
     public List<T> getBasket() {
         return basket;
     }
-
 
     public void addToBasket(T item) throws BasketFullException {
         if (basket.size() >= 10) {
@@ -24,7 +21,6 @@ public class Basket<T> {
             basketValue++;
         }
     }
-
 
     public void removeFromBasket(T item) throws BasketEmptyException {
         if (basket.size() == 0) {

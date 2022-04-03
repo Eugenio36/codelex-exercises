@@ -3,11 +3,11 @@ package io.codelex.TestAdvanced.Exercise1;
 public abstract class Card {
     private int number;
     private String fullName;
-    private double ccv;
+    private String ccv;
     private double balance;
 
 
-    public Card(int number, String fullName, double ccv, double balance) {
+    public Card(int number, String fullName, String ccv, double balance) {
         this.number = number;
         this.fullName = fullName;
         this.ccv = ccv;
@@ -30,11 +30,11 @@ public abstract class Card {
         this.fullName = fullName;
     }
 
-    public double getCcv() {
+    public String getCcv() {
         return ccv;
     }
 
-    public void setCcv(double ccv) {
+    public void setCcv(String ccv) {
         this.ccv = ccv;
     }
 
@@ -50,4 +50,13 @@ public abstract class Card {
 
     public abstract void takeMoney(double amount) throws NotEnoughFundsException;
 
+    @Override
+    public String toString() {
+        return "Card{" +
+                "number=" + number +
+                ", fullName='" + fullName + '\'' +
+                ", ccv='" + ccv + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
 }
