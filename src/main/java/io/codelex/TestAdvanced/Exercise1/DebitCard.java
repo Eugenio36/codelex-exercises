@@ -21,17 +21,6 @@ public class DebitCard extends Card {
 
     }
 
-    @Override
-    public void takeMoney(double amount) throws NotEnoughFundsException {
 
-        setBalance(getBalance() - amount);
-
-        if (getBalance() < amount) {
-            throw new NotEnoughFundsException("Not enough funds on your card!");
-        }
-
-        if (getBalance() < MIN_BALANCE) {
-            System.out.println("Warning: Low funds");
-        }
-    }
 }
+

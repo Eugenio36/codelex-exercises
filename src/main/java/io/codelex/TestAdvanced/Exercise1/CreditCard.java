@@ -17,11 +17,7 @@ public class CreditCard extends Card {
     @Override
     public void takeMoney(double amount) throws NotEnoughFundsException {
 
-        if (getBalance() < amount) {
-            throw new NotEnoughFundsException("Not enough funds on your card!");
-        }
-
-        setBalance(getBalance() - amount);
+        super.takeMoney(amount);
 
         if (getBalance() < MIN_BALANCE) {
             System.out.println("Warning: Low funds");

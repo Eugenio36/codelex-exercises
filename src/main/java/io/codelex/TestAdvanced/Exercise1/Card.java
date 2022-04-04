@@ -48,7 +48,14 @@ public abstract class Card {
 
     public abstract void addMoney(double amount);
 
-    public abstract void takeMoney(double amount) throws NotEnoughFundsException;
+    public void takeMoney(double amount) throws NotEnoughFundsException {
+
+        if (getBalance() < amount) {
+            throw new NotEnoughFundsException("Not enough funds on your card!");
+        }
+
+        setBalance(getBalance() - amount);
+    }
 
     @Override
     public String toString() {
