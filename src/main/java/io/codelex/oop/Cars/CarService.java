@@ -80,27 +80,65 @@ public class CarService {
         return carList.contains(car);
     }
 
-    public List<Car> specificManufacturer(Manufacturer manufacturer) {
+    public List<Car> getCarByManufacturer(Manufacturer manufacturer) {
         List<Car> carsWithSameManufacturer = new ArrayList<>();
         for (Car car : carList) {
-            if (car.getManufacturerList().contains(manufacturer)) {
+            if (car.containsManufacturer(manufacturer)) {
                 carsWithSameManufacturer.add(car);
             }
+
         }
+
+        //carList.stream().filter((Car c) -> c.containsManufacturer(manufacturer)).toList();
+
         return carsWithSameManufacturer;
     }
 
-    public List<Car> sameManufacturer(String name, int year) {
+    public List<Car> sameManufacturer(int yearOfEstablishment, String symbol) {
         List<Car> carListWithSameManufacturer = new ArrayList<>();
         for (Car car : carList) {
             for (Manufacturer manufacturer : car.getManufacturerList()) {
-                if (manufacturer.getName().equals(name) && manufacturer.getYearOfEstablishment() == year) {
-                    carListWithSameManufacturer.add(car);
+
+                switch (symbol) {
+
+                    case ">":
+                        if (manufacturer.getYearOfEstablishment() > yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
+
+                    case "<":
+                        if (manufacturer.getYearOfEstablishment() < yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
+
+                    case ">=":
+                        if (manufacturer.getYearOfEstablishment() >= yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
+
+                    case "<=":
+                        if (manufacturer.getYearOfEstablishment() <= yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
+
+                    case "=":
+                        if (manufacturer.getYearOfEstablishment() == yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
+
+                    case "!=":
+                        if (manufacturer.getYearOfEstablishment() != yearOfEstablishment) {
+                            carListWithSameManufacturer.add(car);
+                        }
+                        break;
                 }
             }
         }
         return carListWithSameManufacturer;
     }
-
-
 }

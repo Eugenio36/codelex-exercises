@@ -50,11 +50,14 @@ public class Main {
         System.out.println("Car list: " + carService.getCarList() + "\n");
 
         carService.removeFromCarList(fordFocus);
-        System.out.println("Removed fordFocus from list and showing new list: " + carService.getCarList() + "\n");
+        System.out.println("Removed fordFocus from list and showing new list: "
+                + carService.getCarList() + "\n");
 
-        System.out.println("Car list with V12 engine: " + carService.getCarByEngine(EngineType.V12) + "\n");
+        System.out.println("Car list with V12 engine: "
+                + carService.getCarByEngine(EngineType.V12) + "\n");
 
-        System.out.println("Car list before 1999 year: " + carService.getYearBefore(1999) + "\n");
+        System.out.println("Car list before 1999 year: "
+                + carService.getYearBefore(1999) + "\n");
 
         System.out.println("Most expensive car in the list:");
         carService.getMostExpensiveCar();
@@ -68,16 +71,21 @@ public class Main {
         carService.getNumberOfManufacturers();
         System.out.println();
 
-        System.out.println("Sort by name (ascending): " + carService.sortByNameAscending() + "\n");
+        System.out.println("Sort by name (ascending): "
+                + carService.sortByNameAscending() + "\n");
 
-        System.out.println("Sort by name (descending): " + carService.sortByNameDescending() + "\n");
+        System.out.println("Sort by name (descending): "
+                + carService.sortByNameDescending() + "\n");
 
-        System.out.println("Check if car is in the list: " + carService.checkIfCarInList(mercedesS500) + "\n");
+        System.out.println("Check if car is in the list: "
+                + carService.checkIfCarInList(mercedesS500) + "\n");
 
-        System.out.println("List of cars manufactured by a specific manufacturer: " + carService.specificManufacturer(Daimler5) + "\n");
+        System.out.println("List of cars manufactured by a specific manufacturer: "
+                + carService.getCarByManufacturer(Daimler7) + "\n");
 
-        //returning the list of cars manufactured by the manufacturer with the year of establishment <,>, <=,> =, =,! = from the given.
-        System.out.println(carService.sameManufacturer("Daimler4", 1991));
+        System.out.println("Returning the list of cars manufactured by the manufacturer " +
+                "with the year of establishment <,>, <=,> =, =,! = from the given.");
+        System.out.println(carService.sameManufacturer(1995, "="));
 
     }
 }
