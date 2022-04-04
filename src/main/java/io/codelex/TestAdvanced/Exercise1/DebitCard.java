@@ -2,7 +2,6 @@ package io.codelex.TestAdvanced.Exercise1;
 
 public class DebitCard extends Card {
 
-    private static final int MIN_BALANCE = 100;
     private static final int MAX_BALANCE = 10000;
 
     public DebitCard(int number, String fullName, String ccv, double balance) {
@@ -17,10 +16,5 @@ public class DebitCard extends Card {
         if (getBalance() > MAX_BALANCE) {
             System.out.println("Warning: Too much money");
         }
-
-
     }
-
-
 }
-

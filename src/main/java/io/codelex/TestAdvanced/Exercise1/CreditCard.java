@@ -11,7 +11,6 @@ public class CreditCard extends Card {
     @Override
     public void addMoney(double amount) {
         setBalance(getBalance() + amount);
-
     }
 
     @Override
