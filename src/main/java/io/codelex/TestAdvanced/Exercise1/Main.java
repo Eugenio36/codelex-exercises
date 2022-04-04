@@ -9,8 +9,20 @@ public class Main {
         System.out.println(debitCard);
         System.out.println("-------------------");
 
-        creditCard.setBalance(200);
-        creditCard.takeMoney(150);
+        try {
+            creditCard.setBalance(200);
+            creditCard.takeMoney(250);
+        } catch (NotEnoughFundsException e) {
+            System.out.println(e);
+        }
+
+        try {
+            debitCard.setBalance(500);
+            debitCard.takeMoney(650);
+        } catch (NotEnoughFundsException e) {
+            System.out.println(e);
+        }
+
 
         debitCard.setBalance(9500);
         debitCard.addMoney(1500);
