@@ -1,22 +1,17 @@
 package io.codelex.collections.practice.phonebook;
 
-import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneDirectoryEdited {
-    private TreeMap<String, String> data;
+
+    private final TreeMap<String, String> data;
 
     public PhoneDirectoryEdited() {
         data = new TreeMap<>();
     }
 
     public String getNumber(String name) {
-        for (Map.Entry<String, String> i : data.entrySet()) {
-            if (i.getKey().equals(name)) {
-                return i.getValue();
-            }
-        }
-        return null;
+        return data.get(name);
     }
 
     public void putNumber(String name, String number) {

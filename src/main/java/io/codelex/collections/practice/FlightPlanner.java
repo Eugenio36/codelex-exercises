@@ -9,12 +9,9 @@ import java.nio.file.Paths;
 import java.util.*;
 
 public class FlightPlanner {
-    private static final Charset charset = Charset.defaultCharset();
-    private static final String file = "/collections/flights.txt";
+
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-
-        Scanner scanner = new Scanner(System.in);
 
         final Path path = Paths.get(Histogram.class.getResource(file).toURI());
 
@@ -22,18 +19,29 @@ public class FlightPlanner {
 
         HashMap<String, List<String>> flightInfo = getDataFromFile(lines);
 
-        String userInput;
+        firstDisplay(flightInfo);
 
-        List<String> selectedCities = new ArrayList<>();
+        List<String> selectedCities = secondDisplay(flightInfo);
 
-        String startCity;
+        String startCity = selectedCities.get(0);
+
+        thirdDisplay(flightInfo, selectedCities, startCity);
 
 
+    }
+
+
+    private static final Charset charset = Charset.defaultCharset();
+
+    private static final String file = "/collections/flights.txt";
+
+    private static void firstDisplay(HashMap<String, List<String>> flightInfo) {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("What would you like to do:\n" +
+            System.out.println("What would you like to do:\n\n" +
                     "To display list of the cities press 1\n" +
                     "To exit program press #");
-            userInput = scanner.nextLine();
+            String userInput = scanner.nextLine();
             if (userInput.equals("1")) {
                 citiesAndDestinations(flightInfo);
                 break;
@@ -44,24 +52,32 @@ public class FlightPlanner {
                 System.out.println("Invalid input, try again.");
             }
         }
+    }
+
+    private static List<String> secondDisplay(HashMap<String, List<String>> flightInfo) {
+        Scanner scanner = new Scanner(System.in);
+        List<String> selectedCities = new ArrayList<>();
 
         while (true) {
             System.out.println("To select a city from which you would like to start press 1\n" +
                     "To exit press #");
-            userInput = scanner.nextLine();
+            String userInput = scanner.nextLine();
 
             if (userInput.equals("1")) {
                 System.out.println("From which city you want to travel?");
-                startCity = scanner.nextLine();
+                String startCity = scanner.nextLine();
 
                 if (!flightInfo.containsKey(startCity)) {
                     System.out.println("There is no such city in the list, try again.");
                     continue;
                 }
+
                 selectedCities.add(startCity);
+
                 System.out.println("Destinations from " + startCity + " : ");
                 flightInfo.get(startCity).forEach(System.out::println);
                 break;
+
             } else if (userInput.equals("#")) {
                 System.out.println("Goodbye.");
                 System.exit(0);
@@ -69,7 +85,11 @@ public class FlightPlanner {
                 System.out.println("Invalid input, try again");
             }
         }
+        return selectedCities;
+    }
 
+    private static void thirdDisplay(HashMap<String, List<String>> flightInfo, List<String> selectedCities, String startCity) {
+        Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("Select your next destination: ");
             String nextCity = scanner.nextLine();
@@ -106,8 +126,8 @@ public class FlightPlanner {
 
     private static void citiesAndDestinations(HashMap<String, List<String>> flightInfo) {
         System.out.println("Cities and their destinations:");
-        for (Map.Entry<String, List<String>> i : flightInfo.entrySet()) {
-            System.out.println(i.getKey() + ": " + i.getValue());
+        for (Map.Entry<String, List<String>> index : flightInfo.entrySet()) {
+            System.out.println(index.getKey() + ": " + index.getValue());
         }
         System.out.println();
     }

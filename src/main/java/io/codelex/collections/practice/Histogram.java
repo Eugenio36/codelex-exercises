@@ -9,16 +9,6 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 public class Histogram {
-    private static final Charset charset = Charset.defaultCharset();
-    private static final String file = "/collections/midtermscores.txt";
-
-    private static String fileContent() throws URISyntaxException, IOException {
-        final Path path = Paths.get(Objects.requireNonNull(Histogram.class.getResource(file)).toURI());
-        return Files.readAllLines(path, charset).stream()
-                .findFirst()
-                .orElseThrow(IllegalStateException::new);
-    }
-
     public static void main(String[] args) throws IOException, URISyntaxException {
         final String scores = fileContent();
 
@@ -39,27 +29,27 @@ public class Histogram {
         for (String score : scoreList) {
             int scoreAsNumber = Integer.parseInt(score);
 
-            if (scoreAsNumber >= 0 && scoreAsNumber <= 9) {
+            if (scoreAsNumber <= 9) {
                 score00to09.append("*");
-            } else if (scoreAsNumber >= 10 && scoreAsNumber <= 19) {
+            } else if (scoreAsNumber <= 19) {
                 score10to19.append("*");
-            } else if (scoreAsNumber >= 20 && scoreAsNumber <= 29) {
+            } else if (scoreAsNumber <= 29) {
                 score20to29.append("*");
-            } else if (scoreAsNumber >= 30 && scoreAsNumber <= 39) {
+            } else if (scoreAsNumber <= 39) {
                 score30to39.append("*");
-            } else if (scoreAsNumber >= 40 && scoreAsNumber <= 49) {
+            } else if (scoreAsNumber <= 49) {
                 score40to49.append("*");
-            } else if (scoreAsNumber >= 50 && scoreAsNumber <= 59) {
+            } else if (scoreAsNumber <= 59) {
                 score50to59.append("*");
-            } else if (scoreAsNumber >= 60 && scoreAsNumber <= 69) {
+            } else if (scoreAsNumber <= 69) {
                 score60to69.append("*");
-            } else if (scoreAsNumber >= 70 && scoreAsNumber <= 79) {
+            } else if (scoreAsNumber <= 79) {
                 score70to79.append("*");
-            } else if (scoreAsNumber >= 80 && scoreAsNumber <= 89) {
+            } else if (scoreAsNumber <= 89) {
                 score80to89.append("*");
-            } else if (scoreAsNumber >= 90 && scoreAsNumber <= 99) {
+            } else if (scoreAsNumber <= 99) {
                 score90to99.append("*");
-            } else if (scoreAsNumber >= 100) {
+            } else {
                 score100.append("*");
             }
         }
@@ -76,6 +66,17 @@ public class Histogram {
         System.out.println("90-99: " + score90to99);
         System.out.println("  100: " + score100);
 
+    }
+
+    private static final Charset charset = Charset.defaultCharset();
+
+    private static final String file = "/collections/midtermscores.txt";
+
+    private static String fileContent() throws URISyntaxException, IOException {
+        final Path path = Paths.get(Objects.requireNonNull(Histogram.class.getResource(file)).toURI());
+        return Files.readAllLines(path, charset).stream()
+                .findFirst()
+                .orElseThrow(IllegalStateException::new);
     }
 
 }

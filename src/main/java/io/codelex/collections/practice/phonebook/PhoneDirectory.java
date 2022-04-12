@@ -13,7 +13,7 @@ public class PhoneDirectory {
 
     private int find(String name) {
         for (int i = 0; i < dataCount; i++) {
-            if (data[i].name.equals(name)) {
+            if (data[i].getName().equals(name)) {
                 return i;
             }
         }
@@ -25,7 +25,7 @@ public class PhoneDirectory {
         if (position == -1) {
             return null;
         } else {
-            return data[position].number;
+            return data[position].getNumber();
         }
     }
 
@@ -35,14 +35,14 @@ public class PhoneDirectory {
         }
         int i = find(name);
         if (i >= 0) {
-            data[i].number = number;
+            data[i].setNumber(number);
         } else {
             if (dataCount == data.length) {
                 data = Arrays.copyOf(data, 2 * data.length);
             }
             PhoneEntry newEntry = new PhoneEntry();  // Create a new pair.
-            newEntry.name = name;
-            newEntry.number = number;
+            newEntry.setName(name);
+            newEntry.setNumber(number);
             data[dataCount] = newEntry;   // Add the new pair to the array.
             dataCount++;
         }
