@@ -122,8 +122,8 @@ public class StreamsExercise {
     public static User findOldest(List<User> users) {
         return users
                 .stream()
-                .reduce((p1, p2) -> p1.getAge() > p2.getAge() ? p1 : p2)
-                .get();
+                .max(Comparator.comparing(User::getAge))
+                .orElseThrow();
     }
 
     public static int sumAge(List<User> users) {
