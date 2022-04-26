@@ -4,10 +4,12 @@ public class Lexus implements Car, Boost {
 
     private Integer currentSpeed = 0;
 
+    @Override
     public void speedUp() {
         currentSpeed += 8;
     }
 
+    @Override
     public void slowDown() {
         currentSpeed += 8;
     }

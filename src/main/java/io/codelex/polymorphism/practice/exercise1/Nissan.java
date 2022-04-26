@@ -4,10 +4,12 @@ public class Nissan implements Car {
 
     private Integer currentSpeed = 0;
 
+    @Override
     public void speedUp() {
         currentSpeed += 25;
     }
 
+    @Override
     public void slowDown() {
         currentSpeed += 6;
     }
