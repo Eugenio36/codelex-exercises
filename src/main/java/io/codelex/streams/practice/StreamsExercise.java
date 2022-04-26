@@ -46,7 +46,12 @@ public class StreamsExercise {
     }
 
     public static List<String> getDistinctLetters(List<String> names) {
-        return names.stream().map((String n) -> n.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+        return names
+                .stream()
+                .map((String n) -> n.split(""))
+                .flatMap(Arrays::stream)
+                .distinct()
+                .collect(Collectors.toList());
     }
 
 
@@ -115,7 +120,10 @@ public class StreamsExercise {
     }
 
     public static User findOldest(List<User> users) {
-        return users.stream().reduce((p1, p2) -> p1.getAge() > p2.getAge() ? p1 : p2).get();
+        return users
+                .stream()
+                .reduce((p1, p2) -> p1.getAge() > p2.getAge() ? p1 : p2)
+                .get();
     }
 
     public static int sumAge(List<User> users) {
