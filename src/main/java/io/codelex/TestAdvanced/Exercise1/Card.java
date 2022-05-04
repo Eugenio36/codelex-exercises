@@ -1,60 +1,39 @@
 package io.codelex.TestAdvanced.Exercise1;
 
+import java.math.BigDecimal;
+
 public abstract class Card {
     private int number;
     private String fullName;
     private String ccv;
-    private double balance;
+    private BigDecimal balance;
 
 
-    public Card(int number, String fullName, String ccv, double balance) {
+    public Card(int number, String fullName, String ccv, BigDecimal balance) {
         this.number = number;
         this.fullName = fullName;
         this.ccv = ccv;
         this.balance = balance;
     }
 
-    public int getNumber() {
-        return number;
-    }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getCcv() {
-        return ccv;
-    }
-
-    public void setCcv(String ccv) {
-        this.ccv = ccv;
-    }
-
-    public double getBalance() {
+    public BigDecimal getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
+    public void setBalance(BigDecimal balance) {
         this.balance = balance;
     }
 
-    public abstract void addMoney(double amount);
+    public abstract void addMoney(BigDecimal amount);
 
-    public void takeMoney(double amount) throws NotEnoughFundsException {
+    public void takeMoney(BigDecimal amount) throws NotEnoughFundsException {
 
-        if (getBalance() < amount) {
+        if (getBalance().subtract(amount).compareTo(BigDecimal.ZERO) < 0) {
             throw new NotEnoughFundsException("Not enough funds on your card!");
         }
 
-        setBalance(getBalance() - amount);
+        setBalance(getBalance().subtract(amount));
     }
 
     @Override
